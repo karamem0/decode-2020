@@ -1,0 +1,14 @@
+@model Microsoft.Graph.Event[]
+
+@foreach (var item in this.Model)
+{
+    <div class="card">
+        <div class="card-body">
+            <h4>@DateTime.Parse(item.Start.DateTime).ToString("M 月 d 日")</h4>
+            <ul>
+                <li>@item.Subject</li>
+                <li>@item.Location.DisplayName</li>
+            </ul>
+        </div>
+    </div>
+}
